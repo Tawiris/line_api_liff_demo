@@ -72,6 +72,13 @@
     }
 
     async function getUserProfile() {
+      const profile = await liff.getProfile(); // wait info profile
+      document.getElementById( "pictureURL" ).src = profile.pictureUrl;
+      document.getElementById( "userId" ).append( profile.userId );
+      document.getElementById( "statusMessage" ).append( profile.statusMessage );
+      document.getElementById( "displayName" ).append( profile.displayName );
+       
+
     }
 
     function getEnvironment() {
@@ -84,16 +91,16 @@
         document.getElementById( "btnLogOut" ).style.display = "none";
       }
       else {
-        document.getElementById( "btnMsg" ).style.display = "none";
-        document.getElementById( "btnScanCode" ).style.display = "none";
-        document.getElementById( "btnClose" ).style.display = "none";
+        document.getElementById( "btnMsg" ).style.display = "none"; // The external browser can't send message back to line app = not show button 
+        document.getElementById( "btnScanCode" ).style.display = "none"; // The external browser can't  QR Code scan = not show button
+        document.getElementById( "btnClose" ).style.display = "none"; // The external browser can't close liff = not show button 
       }
     }
 
     async function main() {
       await liff.init({ liffId: "1657438179-1L5DLjAq" }) // Start when liff.init() // 
       getEnvironment()
-      // getUserProfile()
+      getUserProfile()
       // getContext()
       // getFriendship()
       // createUniversalLink()
