@@ -67,6 +67,7 @@
     }
 
     async function sendMsg() {
+      alert( "show message 1" );
       if( liff.getContext.type !== "none" ) {
         await liff.sendMessages([
           {
@@ -82,7 +83,6 @@
     }
 
     function getContext() {
-      alert( "get context 1" );
       
       document.getElementById( "type" ).append( liff.getContext().type ); // Value is Person to Person (1 on 1), Group, Room or None (Another Browser)
       document.getElementById( "viewType" ).append( liff.getContext().viewType ); // Value is Full, Tall, Compact 
