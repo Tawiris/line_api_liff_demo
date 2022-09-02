@@ -6,7 +6,7 @@
   <title>My LIFF app</title>
   <link rel="stylesheet" href="css/style.css" media="all">
 </head>
-<body>
+<body>  
   <p id="os"><b>OS:</b> </p>
   <p id="language"><b>Language:</b> </p>
   <p id="version"><b>Version:</b> </p>
@@ -42,7 +42,7 @@
     console.log("Hello World!")
   </script> -->
 
-  <!-- <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> -->
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script> 
   <script>
     function createUniversalLink() {
     }
@@ -75,12 +75,12 @@
     }
 
     function getEnvironment() {
+      document.getElementById( "os" ).append( liff.getOS() );
     }
 
     async function main() {
-      alert("LINE Developers x Skooldio")
-      await liff.init({ liffId: "YOUR-LIFF-ID" })
-      // getEnvironment()
+      await liff.init({ liffId: "1657438179-1L5DLjAq" }) // Start when liff.init() // 
+      getEnvironment()
       // getUserProfile()
       // getContext()
       // getFriendship()
