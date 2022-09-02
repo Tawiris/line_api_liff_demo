@@ -73,14 +73,14 @@
 
     async function getUserProfile() {
 
-      alert( "come again 2" );
+      alert( "come again 3" );
       const profile = await liff.getProfile(); // wait info profile
 
       document.getElementById( "pictureUrl" ).src = profile.pictureUrl;
       document.getElementById( "userId" ).append(  profile.userId );
       document.getElementById( "statusMessage" ).append( profile.statusMessage );
       document.getElementById( "displayName" ).append( profile.displayName );
-      document.getElementById( "decodedIDToken" ).append( liff.getDecodedIDToken().email  );
+      document.getElementById( "decodedIDToken" ).append( "c" + liff.getDecodedIDToken().email  );
        
 
     }
