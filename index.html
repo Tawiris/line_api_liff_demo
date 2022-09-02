@@ -73,11 +73,9 @@
 
     async function getUserProfile() {
 
-      alert( "come again" );
+      alert( "come again 2" );
       const profile = await liff.getProfile(); // wait info profile
 
-
-      alert( profile.userId  );
       document.getElementById( "pictureUrl" ).src = profile.pictureUrl;
       document.getElementById( "userId" ).append(  profile.userId );
       document.getElementById( "statusMessage" ).append( profile.statusMessage );
